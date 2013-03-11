@@ -18,7 +18,7 @@ class EnrollmentsControllerTest < ActionController::TestCase
 
   test "should create enrollment" do
     assert_difference('Enrollment.count') do
-      post :create, enrollment: { course_id: @enrollment.course_id, teacher: @enrollment.teacher, user_id: @enrollment.user_id }
+      post :create, enrollment: { course_id: @enrollment.course_id, student_id: @enrollment.student_id, teacher_id: @enrollment.teacher_id }
     end
 
     assert_redirected_to enrollment_path(assigns(:enrollment))
@@ -35,7 +35,7 @@ class EnrollmentsControllerTest < ActionController::TestCase
   end
 
   test "should update enrollment" do
-    put :update, id: @enrollment, enrollment: { course_id: @enrollment.course_id, teacher: @enrollment.teacher, user_id: @enrollment.user_id }
+    put :update, id: @enrollment, enrollment: { course_id: @enrollment.course_id, student_id: @enrollment.student_id, teacher_id: @enrollment.teacher_id }
     assert_redirected_to enrollment_path(assigns(:enrollment))
   end
 

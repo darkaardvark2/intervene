@@ -1,8 +1,11 @@
 Intervene::Application.routes.draw do
+  resources :teachers
+
+
+  resources :students
+
+
   resources :enrollments
-
-
-  resources :users
 
 
   resources :courses
