@@ -1,8 +1,14 @@
 Intervene::Application.routes.draw do
-  resources :students
+  resources :enrollments
 
 
-  resources :teachers
+  resources :users
+
+
+  resources :courses
+
+
+  resources :schools
 
 
   # The priority is based upon order of creation:

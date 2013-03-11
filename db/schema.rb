@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311024923) do
+ActiveRecord::Schema.define(:version => 20130311194556) do
+
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "teacher_id"
+  end
+
+  create_table "enrollments", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.boolean  "teacher"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "schools", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "students", :force => true do |t|
     t.string   "name"
@@ -20,6 +42,19 @@ ActiveRecord::Schema.define(:version => 20130311024923) do
   end
 
   create_table "teachers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "teachers_students", :force => true do |t|
+    t.integer  "teacher_id"
+    t.integer  "student_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
